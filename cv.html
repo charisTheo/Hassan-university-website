@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#780000">    
+    <title>Hassan Raza, CV</title>
+    
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/d4632b623f.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navigation">
+        <label for="nav-toggle">
+            <i class="fa fa-bars" aria-hidden="true" alt="Navigation toggle"></i>                
+        </label>
+        <input type="checkbox" id="nav-toggle">
+        <ul class="navigation-links">
+            <li>
+                <a class="navigation-text" href="index.html" data-hover="Home">Home
+                    <i class="fa fa-home" aria-hidden="true" alt="Home"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="publications.html" data-hover="Publications">Publications
+                    <i class="fa fa-book" aria-hidden="true" alt="Publications"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="research.html" data-hover="Research">Research
+                    <i class="fa fa-tasks" aria-hidden="true" alt="Research"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="cv.html" data-hover="Curriculum Vitae">Curriculum Vitae
+                    <i class="fa fa-user" aria-hidden="true" alt="Curriculum Vitae"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div id="content">
+            <div class="top-images">
+                <div class="col-1-2-left">
+                    <a href="http://www.unipd.it/en/" target="_blank">
+                        <img src="images/unipd_logo.png">
+                    </a>
+                    <a href="http://spritz.math.unipd.it/index.html" target="_blank">
+                        <img src="images/spritz.png">
+                    </a>
+                </div>
+                <div class="col-1-2-right">
+                    <a href="http://hit.psy.unipd.it/phd-bmcs" target="_blank">
+                        <img src="images/hit.png">
+                    </a>
+                    <a href="http://www.math.unipd.it/en/" target="_blank">
+                        <img class="bottom" src="images/dm.png">
+                    </a>
+                </div>
+            </div>
+            <div class="page">
+                <h4 style="text-align: center">Curriculum Vitae</h4>
+
+                <div class="cv">
+                    <iframe src="http://docs.google.com/gview?url=http://euler.math.unipd.it/~hassan/hassan-cv.pdf&embedded=true" style="width:100%; height:700px;"
+                        frameborder="0"></iframe>
+                </div>
+
+                <hr>
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+    <script>
+		var links = [];
+		var icon;
+
+		if (window.innerWidth >= 768) {
+			links = document.getElementsByClassName('navigation-text');
+			for (var i = 0; i < links.length; i++) {
+				icon = links[i].children[0];
+				links[i].textContent = " ";
+				links[i].appendChild(icon);
+			}
+			document.getElementsByClassName('navigation-links')[0].style.marginLeft = "-" + (window.innerWidth - document.getElementById('container').offsetWidth - 35) / 2 + "px";
+		} else {
+			document.getElementsByTagName('label')[0].addEventListener("click", function() {
+				this.classList.toggle('toggleAnimation');
+				this.children[0].classList.toggle('fa-bars');
+				this.children[0].classList.toggle('fa-times');
+				if (!this.classList.contains('toggleAnimation')) {
+					this.classList.toggle('closeAnimation');
+				} else {
+					this.classList.remove('closeAnimation');
+				}
+			});
+		}
+
+	</script>
+</body>
+
+</html>

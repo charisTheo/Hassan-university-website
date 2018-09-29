@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#780000">
+    <title>Hassan Raza, Research</title>
+    
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/d4632b623f.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navigation">
+        <label for="nav-toggle">
+            <i class="fa fa-bars" aria-hidden="true" alt="Navigation toggle"></i>
+        </label>
+        <input type="checkbox" id="nav-toggle">
+        <ul class="navigation-links">
+            <li>
+                <a class="navigation-text" href="index.html" data-hover="Home">Home
+                    <i class="fa fa-home" aria-hidden="true" alt="Home"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="publications.html" data-hover="Publications">Publications
+                    <i class="fa fa-book" aria-hidden="true" alt="Publications"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="research.html" data-hover="Research">Research
+                    <i class="fa fa-tasks" aria-hidden="true" alt="Research"></i>
+                </a>
+            </li>
+            <li>
+                <a class="navigation-text" href="cv.html" data-hover="Curriculum Vitae">Curriculum Vitae
+                    <i class="fa fa-user" aria-hidden="true" alt="Curriculum Vitae"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div id="content">
+            <div class="top-images">
+                <div class="col-1-2-left">
+                    <a href="http://www.unipd.it/en/" target="_blank">
+                        <img src="images/unipd_logo.png">
+                    </a>
+                    <a href="http://spritz.math.unipd.it/index.html" target="_blank">
+                        <img src="images/spritz.png">
+                    </a>
+                </div>
+                <div class="col-1-2-right">
+                    <a href="http://hit.psy.unipd.it/phd-bmcs" target="_blank">
+                        <img src="images/hit.png">
+                    </a>
+                    <a href="http://www.math.unipd.it/en/" target="_blank">
+                        <img class="bottom" src="images/dm.png">
+                    </a>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="publ">
+                    <h4>Research Projects</h4>
+
+                    <h5 class="date">Secure Mobility Management in ICN</h5>
+                        <p class="research">The project aims to investigate and develop, secure and privacy aware solutions for provisioning
+                            secure mobility in Information Centric Networking (ICN) networks. In ICN networks, typical mobile
+                            scenarios include both consumer and producer as mobile entities. While traditional ICN already
+                            provides support for consumer mobility, triggering mobility on producer required, and still requires,
+                            a research effort. In recent years, research community started approaching mobility issues for
+                            both consumer and producer, and presenting different techniques to solve such issues. The existing
+                            techniques analyze mobility in ICN among different domains (inter-domain mobility) as well as
+                            within a single domain (intra-domain mobility), but mostly ignore related security aspects. The
+                            former considers devices that move to a different Autonomous System (AS), thus requesting the
+                            dissemination of routing information between as well as within ASes. The latter regards devices
+                            that move to a different point within the same AS, therefore dissemination of routing information
+                            must be managed only by a single AS. The goal of this project is to analyze security and privacy
+                            issues for producer and consumer mobility on both scenarios.</p>
+                    <center>
+                        <img src="images/Cisco_1.png" height="50%" width="50%">
+                        <img src="images/Cisco_2.png" height="50%" width="50%">
+                    </center>
+
+
+                    <ul class="fa-ul peopleList">
+                        <h4 class="date">People</h4>
+                        <li>
+                            <i class="fa-li fa fa-thumb-tack" aria-hidden="true"></i>
+                            <strong><a href="http://www.math.unipd.it/~conti/">Prof. Mauro Conti</a></strong>, University of Padua (Principal Investigator)
+                        </li>
+
+                        <li>
+                            <strong><i class="fa-li fa fa-thumb-tack" aria-hidden="true"></i> Giovanna Carofiglio</strong>, Cisco Systems, Inc. (Cisco Project Advisor)
+                        </li>
+
+                        <li>
+                            <strong><i class="fa-li fa fa-thumb-tack" aria-hidden="true"></i> Alberto Compagno</strong>, Cisco Systems, Inc.
+                        </li>
+                        <li>
+                            <i class="fa-li fa fa-thumb-tack" aria-hidden="true"></i>
+                            <strong><a href="https://sites.google.com/site/chhaganlalunipd/">Chhagan Lal</a></strong>, University of Padua
+                        </li>
+                        <li>
+                            <i class="fa-li fa fa-thumb-tack" aria-hidden="true"></i>
+                            <strong><a href="http://hit.psy.unipd.it/muhammad-hassan-raza-khan">Hassan Raza</a></strong>, University of Padua
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+    <script>
+		var links = [];
+		var icon;
+
+		if (window.innerWidth >= 768) {
+			links = document.getElementsByClassName('navigation-text');
+			for (var i = 0; i < links.length; i++) {
+				icon = links[i].children[0];
+				links[i].textContent = " ";
+				links[i].appendChild(icon);
+			}
+			document.getElementsByClassName('navigation-links')[0].style.marginLeft = "-" + (window.innerWidth - document.getElementById('container').offsetWidth - 35) / 2 + "px";
+		} else {
+			document.getElementsByTagName('label')[0].addEventListener("click", function() {
+				this.classList.toggle('toggleAnimation');
+				this.children[0].classList.toggle('fa-bars');
+				this.children[0].classList.toggle('fa-times');
+				if (!this.classList.contains('toggleAnimation')) {
+					this.classList.toggle('closeAnimation');
+				} else {
+					this.classList.remove('closeAnimation');
+				}
+			});
+		}
+
+	</script>
+</body>
+
+</html>
